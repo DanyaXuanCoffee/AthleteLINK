@@ -33,7 +33,7 @@ export default function Login() {
       <div className="relative z-10 w-full max-w-[572px]">
         <div className="bg-black/50 border border-[#E0E0E0] shadow-[0_82px_40px_rgba(100,100,100,0.08)] p-8 md:p-12 lg:p-16">
           <h1 className="text-2xl md:text-3xl lg:text-[31px] font-bold text-white text-center mb-8 md:mb-12 leading-[120%] tracking-tight">
-            Авто��изация в AthleteLink
+            Авторизация в AthleteLink
           </h1>
 
           <form onSubmit={handleLogin} className="space-y-6">
