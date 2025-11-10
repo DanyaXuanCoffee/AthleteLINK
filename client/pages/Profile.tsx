@@ -301,7 +301,7 @@ export default function Profile() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="Захар Смирнов"
-                    className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none mt-15"
+                    className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none mt-3"
                   />
                 </div>
 
