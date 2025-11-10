@@ -273,15 +273,15 @@ export default function Profile() {
                 <img
                   src="https://api.builder.io/api/v1/image/assets/TEMP/344dcf4b50f86e9e2496c7dbc315e853b4b8c063?width=178"
                   alt={fullName}
-                  className="w-[89px] h-[86px] rounded-full absolute left-7 top-[28px] mt-60"
+                  className="w-[89px] h-[86px] rounded-full absolute left-7 top-[28px] mt-20"
                 />
                 <div className="ml-[120px]">
-                  <h2 className="text-black text-xl font-medium">{fullName}</h2>
-                  <p className="text-black/50 text-base">{email}</p>
+                  <h2 className="text-black text-xl font-medium mt-20">{fullName}</h2>
+                  <p className="text-black/50 text-base mt-20">{email}</p>
                 </div>
                 <button
                   onClick={handleSaveSettings}
-                  className="ml-auto bg-[#4182F9] text-white px-5 py-2 rounded-lg text-base mt-60"
+                  className="ml-auto bg-[#4182F9] text-white px-5 py-2 rounded-lg text-base mt-20"
                 >
                   Сохранить настройки
                 </button>
