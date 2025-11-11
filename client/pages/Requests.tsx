@@ -345,7 +345,7 @@ export default function Requests() {
                     }}
                   ></div>
                   {/* Left Side - Event Info */}
-                  <div className="flex-1">
+                  <div className="flex-1 relative z-10">
                     <h3 className="text-black text-4xl font-light mb-3">
                       {request.eventName}
                     </h3>
@@ -364,7 +364,7 @@ export default function Requests() {
                   </div>
 
                   {/* Right Side - Status Info */}
-                  <div className="border-[3px] border-black rounded-[50px] px-8 py-4 min-w-[466px]">
+                  <div className="border-[3px] border-black rounded-[50px] px-8 py-4 min-w-[466px] relative z-10">
                     <div className="space-y-3">
                       {/* Application Status */}
                       <div className="flex items-center justify-between">
