@@ -425,7 +425,7 @@ export default function Settings() {
               </button>
             </div>
 
-            <div className="flex justify-end items-end">
+            <div className="flex justify-between items-end">
               
               
 
