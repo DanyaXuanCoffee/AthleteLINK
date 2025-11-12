@@ -314,6 +314,16 @@ export default function ProfileStats() {
               {/* Left Card - Best Sport */}
               <div className="rounded-[55px] border-[1.5px] border-black bg-gradient-to-r from-[#4F0A0A] to-[#780000] shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] p-6 flex flex-col items-center relative overflow-visible ">
                 {/* Badge Image positioned above the card */}
+                <div
+                  className="text-[#760000] text-[100px] font-bold text-center mt-48"
+                  style={{
+                    WebkitTextStroke: '3px black',
+                    textShadow: '0 10px 4px rgba(0, 0, 0, 0.50)',
+                    fontFamily: 'Piazzolla, serif'
+                  }}
+                >
+                  {USER_STATS.rankRomanNumeral}
+                </div>
                 <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 rotate-10 transform-origin-center scale-125">
                   <img
                     src={`${USER_STATS.badgeImage}?width=598 `}
@@ -323,16 +333,7 @@ export default function ProfileStats() {
                 </div>
                 
                 {/* Roman Numeral */}
-                <div 
-                  className="text-[#760000] text-[100px] font-bold text-center mt-48"
-                  style={{ 
-                    WebkitTextStroke: '3px black',
-                    textShadow: '0 10px 4px rgba(0, 0, 0, 0.50)',
-                    fontFamily: 'Piazzolla, serif'
-                  }}
-                >
-                  {USER_STATS.rankRomanNumeral}
-                </div>
+                
 
                 <h3 className="text-[#D9D9D9] text-[32px] font-light text-center mt-8">
                   Ваш лучший спорт: {USER_STATS.bestSport}
