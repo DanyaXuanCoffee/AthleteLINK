@@ -317,7 +317,7 @@ export default function ProfileStats() {
                   <img
                     src={`${USER_STATS.badgeImage}?width=598 `}
                     alt="Badge"
-                    className="w-[299px] h-[298px] object-contain"
+                    className="w-[2990px] h-[2980px] object-contain"
                   />
                 </div>
                 
