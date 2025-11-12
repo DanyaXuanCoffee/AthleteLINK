@@ -1,30 +1,46 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Profile() {
+export default function Settings() {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState("Захар Смирнов");
-  const [username, setUsername] = useState("pauchuck");
-  const [gender, setGender] = useState("");
-  const [city, setCity] = useState("");
-  const [birthdate, setBirthdate] = useState("");
-  const [telegram, setTelegram] = useState("@Lovely_Specty");
-  const [email] = useState("alexarawles@gmail.com");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [secretQuestionAnswer, setSecretQuestionAnswer] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [selectedSecretQuestion, setSelectedSecretQuestion] = useState("");
+  const [secretAnswer, setSecretAnswer] = useState("");
+  const [showQuestionDropdown, setShowQuestionDropdown] = useState(false);
 
-  const [showGenderDropdown, setShowGenderDropdown] = useState(false);
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
-  const [showBirthdateDropdown, setShowBirthdateDropdown] = useState(false);
-  const [showTelegramDropdown, setShowTelegramDropdown] = useState(false);
+  const secretQuestions = [
+    "Имя вашего первого питомца?",
+    "Название вашей первой школы?",
+    "Девичья фамилия матери?",
+    "Ваш любимый город?",
+  ];
 
-  const handleSaveSettings = () => {
-    console.log("Saving settings:", {
-      fullName,
-      username,
-      gender,
-      city,
-      birthdate,
-      telegram,
-    });
+  const handleChangePassword = () => {
+    console.log("Changing password...");
+  };
+
+  const handleSaveSecretQuestion = () => {
+    console.log("Saving secret question...");
+  };
+
+  const handleDeleteAccount = () => {
+    const confirmed = window.confirm(
+      "Вы уверены, что хотите удалить учетную запись? Это действие необратимо.",
+    );
+    if (confirmed) {
+      console.log("Deleting account...");
+      navigate("/");
+    }
+  };
+
+  const handleLogout = () => {
+    const confirmed = window.confirm("Вы действительно хотите выйти?");
+    if (confirmed) {
+      console.log("Logging out...");
+      navigate("/");
+    }
   };
 
   return (
@@ -34,11 +50,10 @@ export default function Profile() {
         <div className="w-[76px] border-r-2 border-[#5F5C5C] relative flex flex-col items-center pt-8 gap-12">
           {/* Navigation Icons */}
           <div className="space-y-8 flex flex-col items-center mt-96">
-            {/* Dashboard Icon - Active */}
-            <div className="relative">
-              <div className="absolute left-0 top-0 w-[76px] h-[50px] bg-gradient-to-r from-[#4182F9]/50 to-[#4182F9]/0 -ml-10 mt-6 "></div>
+            {/* Dashboard Icon */}
+            <button onClick={() => navigate("/profile")}>
               <svg
-                className="w-[21px] h-[22px] relative z-10 mt-10"
+                className="w-[21px] h-[22px] opacity-50 hover:opacity-100 transition-opacity mt-10"
                 viewBox="0 0 21 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +75,7 @@ export default function Profile() {
                   fill="white"
                 />
               </svg>
-            </div>
+            </button>
 
             {/* Analytics Icon */}
             <button onClick={() => navigate("/stats")}>
@@ -165,10 +180,11 @@ export default function Profile() {
               </svg>
             </button>
 
-            {/* Settings Icon */}
-            <button onClick={() => navigate("/settings")}>
+            {/* Settings Icon - Active */}
+            <div className="relative">
+              <div className="absolute left-0 top-0 w-[76px] h-[50px] bg-gradient-to-r from-[#4182F9]/50 to-[#4182F9]/0 -ml-10 mt-[-0.99rem]"></div>
               <svg
-                className="w-[21px] h-[22px] opacity-50 hover:opacity-100 transition-opacity"
+                className="w-[21px] h-[22px] relative z-10"
                 viewBox="0 0 21 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -190,12 +206,12 @@ export default function Profile() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </div>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-7">
+        <div className="flex-1 p-7 overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between mb-12">
             <div>
@@ -271,240 +287,155 @@ export default function Profile() {
             </div>
           </div>
 
-          {/* Profile Card */}
-          <div className="rounded-[10px] overflow-hidden ">
-            {/* Header Section */}
-            <div className="h-[88px] bg-gradient-to-r from-[#878DB3] to-[#001AFF]/30 opacity-50 relative ">
-              <div className="flex items-center px-7 py-8 gap-6">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/344dcf4b50f86e9e2496c7dbc315e853b4b8c063?width=178"
-                  alt={fullName}
-                  className="w-[89px] h-[86px] rounded-full absolute left-7 top-[100px] mt-6"
+          {/* Settings Card */}
+          <div className="rounded-[10px] bg-white/50 p-8 relative min-h-[748px]">
+            {/* Password Change Section */}
+            <h2 className="text-black text-4xl font-bold mb-6">Смена пароля</h2>
+
+            <div className="flex flex-col gap-4 mb-6">
+              <input
+                type="password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                placeholder="Ваш текущий пароль"
+                className="w-full max-w-[526px] h-[46px] rounded-lg bg-[#F9F9F9]/50 px-4 text-black/40 text-base outline-none placeholder:text-black/40"
+              />
+
+              <input
+                type="text"
+                value={secretQuestionAnswer}
+                onChange={(e) => setSecretQuestionAnswer(e.target.value)}
+                placeholder="Ответ на секретный вопрос:"
+                className="w-full max-w-[526px] h-[45px] rounded-lg bg-[#F9F9F9]/50 px-4 text-black/40 text-[15px] outline-none placeholder:text-black/40"
+              />
+
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="Ваш новый пароль"
+                className="w-full max-w-[526px] h-[45px] rounded-lg bg-[#F9F9F9]/50 px-4 text-black/40 text-base outline-none placeholder:text-black/40"
+              />
+            </div>
+
+            <p className="text-black text-base opacity-80 mb-6 max-w-[526px]">
+              Требования: не мене�� 8 символов, не менее 1 заглавной буквы, не
+              менее 1 строчной буквы, не менее 1 цифры
+            </p>
+
+            <button
+              onClick={handleChangePassword}
+              className="w-[217px] h-[38px] rounded-lg bg-[#4182F9] text-white text-base text-center mb-20"
+            >
+              Изменить пароль
+            </button>
+
+            {/* Secret Question Section */}
+            <h2 className="text-black text-4xl font-bold mb-2">
+              Секретный вопрос
+            </h2>
+
+            <p className="text-black text-base opacity-80 mb-6">
+              Текущий секретный вопрос: не установлен.
+            </p>
+
+            <div className="space-y-4 mb-6 relative">
+              <div className="relative w-full max-w-[526px]">
+                <input
+                  type="text"
+                  value={selectedSecretQuestion}
+                  onChange={(e) => setSelectedSecretQuestion(e.target.value)}
+                  onClick={() => setShowQuestionDropdown(!showQuestionDropdown)}
+                  placeholder="Выберите вопрос из списка"
+                  className="w-full h-[46px] rounded-lg bg-[#F9F9F9]/50 px-4 text-black/40 text-base outline-none placeholder:text-black/40 pr-12"
+                  readOnly
                 />
-                <div className="ml-[120px] mt-28">
-                  <h2 className="text-black text-xl font-medium">{fullName}</h2>
-                  <p className="text-black/50 text-base">{email}</p>
-                </div>
                 <button
-                  onClick={handleSaveSettings}
-                  className="ml-auto bg-[#4182F9] text-white px-5 py-2 rounded-lg text-base mt-32"
+                  onClick={() => setShowQuestionDropdown(!showQuestionDropdown)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2"
                 >
-                  Сохранить настройки
+                  <svg
+                    className="w-[22px] h-[21px] opacity-50"
+                    viewBox="0 0 22 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18.2602 7.83124L12.2836 13.5362C11.5777 14.21 10.4227 14.21 9.7169 13.5362L3.74023 7.83124"
+                      stroke="#292D32"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
+                {showQuestionDropdown && (
+                  <div className="absolute z-50 mt-2 w-full bg-white border border-black/10 rounded-lg shadow-xl overflow-hidden">
+                    {secretQuestions.map((question, index) => (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          setSelectedSecretQuestion(question);
+                          setShowQuestionDropdown(false);
+                        }}
+                        className="w-full text-left px-4 py-3 text-black hover:bg-[#F9F9F9] transition-colors"
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
+
+              <input
+                type="text"
+                value={secretAnswer}
+                onChange={(e) => setSecretAnswer(e.target.value)}
+                placeholder="Введите ответ"
+                className="w-full max-w-[526px] h-[46px] rounded-lg bg-[#F9F9F9]/50 px-4 text-black/40 text-base outline-none placeholder:text-black/40"
+              />
             </div>
 
-            {/* Form Section */}
-            <div className="bg-white/50 p-8 min-h-[600px]">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                {/* Full Name */}
-                <div>
-                  <label className="block text-black/80 text-base mb-2 mt-40 ml-2">
-                    Фамилия и имя
-                  </label>
-                  <input
-                    type="text"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Захар Смирнов"
-                    className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none"
-                  />
-                </div>
-
-                {/* Username */}
-                <div>
-                  <label className="block text-black/80 text-base mb-2 mt-40 ml-2">
-                    Имя пользователя
-                  </label>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="pauchuck"
-                    className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none"
-                  />
-                </div>
-
-                {/* Gender */}
-                <div className="relative">
-                  <label className="block text-black/80 text-base mb-2">
-                    Пол
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      value={gender}
-                      onChange={(e) => setGender(e.target.value)}
-                      placeholder="Выберите пол"
-                      className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none pr-10"
-                    />
-                    <button
-                      onClick={() => setShowGenderDropdown(!showGenderDropdown)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2"
-                    >
-                      <svg
-                        className="w-[22px] h-[21px] opacity-50"
-                        viewBox="0 0 22 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M18.2602 7.83124L12.2836 13.5362C11.5777 14.21 10.4227 14.21 9.7169 13.5362L3.74023 7.83124"
-                          stroke="#292D32"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
-                {/* City */}
-                <div className="relative">
-                  <label className="block text-black/80 text-base mb-2">
-                    Город
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      placeholder="Введите или начните поиск через выпадающее меню"
-                      className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none pr-10"
-                    />
-                    <button
-                      onClick={() => setShowCityDropdown(!showCityDropdown)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2"
-                    >
-                      <svg
-                        className="w-[20px] h-[21px] opacity-50"
-                        viewBox="0 0 20 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.5999 7.83124L11.1666 13.5362C10.5249 14.21 9.4749 14.21 8.83324 13.5362L3.3999 7.83124"
-                          stroke="#292D32"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Birthdate */}
-                <div className="relative">
-                  <label className="block text-black/80 text-base mb-2">
-                    Дата рождения
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      value={birthdate}
-                      onChange={(e) => setBirthdate(e.target.value)}
-                      placeholder="Введите в формате ДД.ММ.ГГГГ"
-                      className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none pr-10"
-                    />
-                    <button
-                      onClick={() =>
-                        setShowBirthdateDropdown(!showBirthdateDropdown)
-                      }
-                      className="absolute right-4 top-1/2 -translate-y-1/2"
-                    >
-                      <svg
-                        className="w-[22px] h-[20px] opacity-50"
-                        viewBox="0 0 22 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M18.2602 7.45831L12.2836 12.8916C11.5777 13.5333 10.4227 13.5333 9.7169 12.8916L3.74023 7.45831"
-                          stroke="#292D32"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Telegram */}
-                <div className="relative">
-                  <label className="block text-black/80 text-base mb-2">
-                    Идентификатор пользователя в Telegram
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      value={telegram}
-                      onChange={(e) => setTelegram(e.target.value)}
-                      placeholder="@Lovely_Specty"
-                      className="w-full bg-[#F9F9F9]/50 rounded-lg px-4 py-3 text-black/40 text-base outline-none pr-10"
-                    />
-                    <button
-                      onClick={() =>
-                        setShowTelegramDropdown(!showTelegramDropdown)
-                      }
-                      className="absolute right-4 top-1/2 -translate-y-1/2"
-                    >
-                      <svg
-                        className="w-[20px] h-[20px] opacity-50"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.5999 7.45831L11.1666 12.8916C10.5249 13.5333 9.4749 13.5333 8.83324 12.8916L3.3999 7.45831"
-                          stroke="#292D32"
-                          strokeWidth="1.5"
-                          strokeMiterlimit="10"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Email Section */}
-              <div className="mt-12">
-                <h3 className="text-black text-lg font-medium mb-4">
-                  Адрес электронной почты
-                </h3>
-                <div className="flex items-start gap-4">
-                  <div className="w-[42px] h-[42px] rounded-full bg-[#4182F9]/10 flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-[23px] h-[20px]"
-                      viewBox="0 0 23 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.2915 2.91669H6.70817C3.83317 2.91669 1.9165 4.16669 1.9165 7.08335V12.9167C1.9165 15.8334 3.83317 17.0834 6.70817 17.0834H16.2915C19.1665 17.0834 21.0832 15.8334 21.0832 12.9167V7.08335C21.0832 4.16669 19.1665 2.91669 16.2915 2.91669ZM16.7419 7.99169L13.7423 10.075C13.1098 10.5167 12.3048 10.7334 11.4998 10.7334C10.6948 10.7334 9.88025 10.5167 9.25734 10.075L6.25775 7.99169C5.95109 7.77502 5.90317 7.37502 6.14275 7.10835C6.39192 6.84169 6.84234 6.79169 7.149 7.00835L10.1486 9.09169C10.8769 9.60002 12.1132 9.60002 12.8415 9.09169L15.8411 7.00835C16.1478 6.79169 16.6078 6.83335 16.8473 7.10835C17.0965 7.37502 17.0486 7.77502 16.7419 7.99169Z"
-                        fill="#4182F9"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-black text-base">{email}</p>
-                    <p className="text-black/50 text-base">
-                      Изменен 10 дней назад
-                    </p>
-                  </div>
-                  <button className="ml-auto bg-[#4182F9] text-white px-5 py-2 rounded-lg text-base">
-                    Изменить адрес эл. почты
-                  </button>
-                </div>
-              </div>
+            <div className="flex gap-4 items-center  mb-6">
+              <button
+                onClick={handleSaveSecretQuestion}
+                className="w-[217px] h-[38px] rounded-lg bg-[#4182F9] text-white text-base text-center"
+              >
+                Сохранить
+              </button>
             </div>
+
+            <div className="flex gap-4 items-center justify-end mb-6">
+              <button
+                onClick={handleLogout}
+                className="w-[257px] h-[38px] rounded-lg bg-[#B52626] text-white text-base text-center"
+              >
+                Выйти
+              </button>
+            </div>
+
+            <div className="flex gap-4 items-center justify-end ">
+              <button
+                onClick={handleDeleteAccount}
+                className="w-[257px] h-[38px] rounded-lg bg-[#B52626] text-white text-base text-center"
+              >
+                Удалить учетную запись
+              </button>
+            </div>
+
+            <div className="flex justify-between items-end">
+              <p className="text-black text-base opacity-80">
+                App Version: 0.1 Alphadev 13.10.25
+              </p>
+            </div>
+
+            {/* Levitating MAI Logo */}
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a03e799eec89d8338d3085630ed1da2e8aeda771?width=734"
+              alt="MAI Logo"
+              className="absolute right-8 top-[280px] w-[367px] h-[354px] object-contain animate-levitate-active"
+            />
           </div>
         </div>
       </div>
