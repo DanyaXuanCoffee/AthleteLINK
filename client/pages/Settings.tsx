@@ -415,6 +415,8 @@ export default function Settings() {
               >
                 Выйти
               </button>
+            </div>
+        
             <div className="flex gap-4 items-center justify-end mb-6">
               
               <button
