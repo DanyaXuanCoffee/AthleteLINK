@@ -43,7 +43,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 1,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -51,7 +51,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 2,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -59,7 +59,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 3,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -67,7 +67,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 4,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -75,7 +75,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 5,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -83,7 +83,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 6,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -91,7 +91,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 7,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -99,15 +99,15 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 8,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
     {
       id: 9,
-      name: "Крылов (Spectrum) Даniил",
+      name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -115,7 +115,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 10,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -123,7 +123,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 11,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     },
@@ -131,7 +131,7 @@ export const REQUEST_DATA_MOCK: RequestData = {
       id: 12,
       name: "Крылов (Spectrum) Даниил",
       nickname: "Spectrum",
-      avatar: "https://api.builder.io/api/v1/image/assets/TEMP/1c0c1f7ca8ef2ae4380cf6cb33cd212e1dc8d200",
+      avatar: "/placeholder_avatar.jpg",
       gradientFrom: "#4F0A0A",
       gradientTo: "#780000"
     }
@@ -141,5 +141,5 @@ export const REQUEST_DATA_MOCK: RequestData = {
 export const HEADER_DATA = {
   userName: "Захар",
   currentDate: "Сб, 11 октября 2025",
-  profileImage: "https://api.builder.io/api/v1/image/assets/TEMP/000c31178b1986558f577f90ead0f3bed101a8c7"
+  profileImage: "/placeholder_avatar.jpg"
 };
