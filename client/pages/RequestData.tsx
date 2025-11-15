@@ -19,7 +19,10 @@ export default function RequestData() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors">
+            <button
+              onClick={() => navigate("/find-requests")}
+              className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors"
+            >
               <svg
                 className="w-[22px] h-[22px]"
                 viewBox="0 0 22 22"
@@ -98,7 +101,7 @@ export default function RequestData() {
 
                   <div className="mb-6">
                     <p className="text-white text-[17px] font-light leading-relaxed">
-                      Описание игры:<br />
+                      ��писание игры:<br />
                       {requestData.gameDescription}
                     </p>
                   </div>
