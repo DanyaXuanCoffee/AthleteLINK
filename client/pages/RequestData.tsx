@@ -101,7 +101,7 @@ export default function RequestData() {
 
                   <div className="mb-6">
                     <p className="text-white text-[17px] font-light leading-relaxed">
-                      ��писание игры:<br />
+                      Описание игры:<br />
                       {requestData.gameDescription}
                     </p>
                   </div>
