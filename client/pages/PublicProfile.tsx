@@ -132,17 +132,18 @@ export default function PublicProfile() {
               </div>
             </div>
 
-            {/* Cat Image */}
+            {/* Cat Video */}
             <div className="flex flex-col items-center mt-6">
               <div className="w-[150px] h-[150px] rounded-lg border-2 border-white overflow-hidden bg-gray-800">
-                <img
-                  src={`${CAT_PLACEHOLDER.image}?width=300`}
-                  alt="Cat"
+                <video
+                  src="/cat_stick.webm"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-white text-sm mt-2">{CAT_PLACEHOLDER.caption}</p>
-              <p className="text-white text-xs opacity-70">{CAT_PLACEHOLDER.subcaption}</p>
             </div>
           </div>
 
