@@ -153,7 +153,7 @@ export default function PublicProfile() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-12 gap-6 mt-8">
+          <div className="grid grid-cols-12 gap-6 mt-88">
             {/* Left Column - Best Sport */}
             <div className="col-span-3">
               <div
