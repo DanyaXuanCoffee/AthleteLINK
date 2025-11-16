@@ -167,7 +167,7 @@ export default function PublicProfile() {
                   <img
                     src={`${PUBLIC_PROFILE_DATA.bestSport.badgeImage}?width=546`}
                     alt="Badge"
-                    className="w-[273px] h-[270px] object-contain"
+                    className="w-[2730px] h-[2700px] object-contain"
                   />
                 </div>
 
