@@ -404,7 +404,7 @@ export default function PublicProfile() {
                       />
                       <p
                         className="text-white text-2x1 font-light"
-                        style={{ WebkitTextStroke: "1px white mb-4" }}
+                        style={{ WebkitTextStroke: "1px white " }}
                       >
                         {opponent.name}
                       </p>
