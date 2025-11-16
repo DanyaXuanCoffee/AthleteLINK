@@ -204,8 +204,8 @@ export default function PublicProfile() {
               </h3>
 
               {/* First Sport */}
-              <div className="flex items-center gap-4">
-                <div className="relative">
+              <div className="flex items-center relative">
+                <div className="relative z-10">
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[0].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[0].name}
@@ -224,14 +224,13 @@ export default function PublicProfile() {
                   </div>
                 </div>
                 <div
-                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4"
+                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4 -ml-[87px] pl-[130px]"
                   style={{
                     background: `linear-gradient(90deg, ${PUBLIC_PROFILE_DATA.otherSports[0].gradientFrom} 0%, ${PUBLIC_PROFILE_DATA.otherSports[0].gradientTo} 100%)`,
                   }}
                 >
                   <p
                     className="text-white text-[22px] font-medium"
-                    /*text-white text-[22px] font-medium*/
                   >
                     {PUBLIC_PROFILE_DATA.otherSports[0].name} ({PUBLIC_PROFILE_DATA.otherSports[0].score})
                   </p>
@@ -239,8 +238,8 @@ export default function PublicProfile() {
               </div>
 
               {/* Second Sport */}
-              <div className="flex items-center gap-4">
-                <div className="relative">
+              <div className="flex items-center relative">
+                <div className="relative z-10">
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[1].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[1].name}
@@ -259,14 +258,13 @@ export default function PublicProfile() {
                   </div>
                 </div>
                 <div
-                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4"
+                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4 -ml-[87px] pl-[130px]"
                   style={{
                     background: `linear-gradient(90deg, ${PUBLIC_PROFILE_DATA.otherSports[1].gradientFrom} 0%, ${PUBLIC_PROFILE_DATA.otherSports[1].gradientTo} 100%)`,
                   }}
                 >
                   <p
                     className="text-white text-[22px] font-medium"
-                    /*style={{ WebkitTextStroke: "1.5px black" }}*/
                   >
                     {PUBLIC_PROFILE_DATA.otherSports[1].name} ({PUBLIC_PROFILE_DATA.otherSports[1].score})
                   </p>
@@ -274,8 +272,8 @@ export default function PublicProfile() {
               </div>
 
               {/* Third Sport */}
-              <div className="flex items-center gap-4">
-                <div className="relative">
+              <div className="flex items-center relative">
+                <div className="relative z-10">
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[2].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[2].name}
@@ -294,14 +292,13 @@ export default function PublicProfile() {
                   </div>
                 </div>
                 <div
-                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4"
+                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4 -ml-[87px] pl-[130px]"
                   style={{
                     background: `linear-gradient(90deg, ${PUBLIC_PROFILE_DATA.otherSports[2].gradientFrom} 0%, ${PUBLIC_PROFILE_DATA.otherSports[2].gradientTo} 100%)`,
                   }}
                 >
                   <p
                     className="text-white text-[22px] font-medium"
-                    /*style={{ WebkitTextStroke: "1.5px black" }}*/
                   >
                     {PUBLIC_PROFILE_DATA.otherSports[2].name} ({PUBLIC_PROFILE_DATA.otherSports[2].score})
                   </p>
@@ -309,8 +306,8 @@ export default function PublicProfile() {
               </div>
 
               {/* Fourth Sport */}
-              <div className="flex items-center gap-4">
-                <div className="relative">
+              <div className="flex items-center relative">
+                <div className="relative z-10">
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[3].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[3].name}
@@ -329,14 +326,13 @@ export default function PublicProfile() {
                   </div>
                 </div>
                 <div
-                  className="flex-1 rounded-[55px] border-[10.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4"
+                  className="flex-1 rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] px-6 py-4 -ml-[87px] pl-[130px]"
                   style={{
                     background: `linear-gradient(90deg, ${PUBLIC_PROFILE_DATA.otherSports[3].gradientFrom} 0%, ${PUBLIC_PROFILE_DATA.otherSports[3].gradientTo} 100%)`,
                   }}
                 >
                   <p
                     className="text-white text-xl font-medium"
-                    /*style={{ WebkitTextStroke: "1.5px black" }}*/
                   >
                     {PUBLIC_PROFILE_DATA.otherSports[3].name} ({PUBLIC_PROFILE_DATA.otherSports[3].score})
                   </p>
