@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import ProfileStats from "./pages/ProfileStats";
+import PublicProfile from "./pages/PublicProfile";
 import Requests from "./pages/Requests";
 import Settings from "./pages/Settings";
 import FindRequests from "./pages/FindRequests";
@@ -30,6 +31,7 @@ export const App = () => (
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/stats" element={<ProfileStats />} />
+          <Route path="/public-profile" element={<PublicProfile />} />
           <Route path="/requests" element={<Requests />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/find-requests" element={<FindRequests />} />

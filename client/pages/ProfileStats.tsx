@@ -398,7 +398,10 @@ export default function ProfileStats() {
                   ))}
                 </div>
 
-                <button className="w-full mt-6 bg-[#4182F9] text-white text-sm rounded-lg px-6 py-2 drop-shadow-[0_8px_4px_rgba(0,0,0,0.50)]">
+                <button
+                  onClick={() => navigate("/public-profile")}
+                  className="w-full mt-6 bg-[#4182F9] text-white text-sm rounded-lg px-6 py-2 drop-shadow-[0_8px_4px_rgba(0,0,0,0.50)] hover:bg-[#3671E8] transition-colors"
+                >
                   Как мой профиль видят другие люди?
                 </button>
               </div>
