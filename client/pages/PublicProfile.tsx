@@ -254,7 +254,7 @@ export default function PublicProfile() {
                     className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-bold -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-bold -rotate-[15deg] text-center mt-8"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[1].badgeColor,
                       WebkitTextStroke: "1px black",
@@ -287,7 +287,7 @@ export default function PublicProfile() {
                     className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[15deg] text-center mt-8"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[2].badgeColor,
                       WebkitTextStroke: "1px black",
@@ -320,7 +320,7 @@ export default function PublicProfile() {
                     className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[15deg] text-center mt-8"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[3].badgeColor,
                       WebkitTextStroke: "1px black",
