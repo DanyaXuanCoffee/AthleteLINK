@@ -22,7 +22,7 @@ export default function PublicProfile() {
 
         <div className="flex items-center gap-4">
           {/* Search */}
-          <button className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors">
+          <button onClick={() => navigate("/profile")} className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors">
             <svg
               className="w-[22px] h-[22px]"
               viewBox="0 0 22 22"
