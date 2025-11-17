@@ -24,7 +24,7 @@ export default function FindRequests() {
       id: 1,
       title: "Бухич на заборах МАИ №1",
       description: "Вы будете играть в Литрбол!",
-      venue: "Московсикий авиационный...",
+      venue: "Московский авиационный...",
       dateTime: "18.10.2025, 23:33",
       players: "Игроков: 256/256",
       avgRating: "Ср. рейтинг: ~50000",
