@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { USER_STATS } from "@/constants/statsConstants";
 
 export default function ProfileStats() {
