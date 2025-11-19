@@ -363,7 +363,7 @@ export default function CreateRequest() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full max-w-[404px] h-[52px] bg-[#4182F9] rounded-[25px] text-white text-[22px] font-normal shadow-[0_8px_4px_rgba(0,0,0,0.5)] hover:bg-[#3571e8] transition-colors mx-auto block"
+                  className="w-full max-w-[404px] h-[52px] bg-[#4182F9] rounded-[25px] text-white text-[22px] font-normal shadow-[0_8px_4px_rgba(0,0,0,0.5)] hover:bg-[#3571e8] transition-colors ml-auto block"
                 >
                   Сохранить и опубликовать заявку
                 </button>
