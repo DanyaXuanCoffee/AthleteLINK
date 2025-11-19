@@ -22,7 +22,7 @@ export default function PublicProfile() {
 
         <div className="flex items-center gap-4">
           {/* Search */}
-          <button className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors">
+          <button onClick={() => navigate("/profile")} className="w-[46px] h-[47px] rounded-[10px] bg-white/50 flex items-center justify-center hover:bg-white/70 transition-colors">
             <svg
               className="w-[22px] h-[22px]"
               viewBox="0 0 22 22"
@@ -76,11 +76,15 @@ export default function PublicProfile() {
           </div>
 
           {/* Profile Picture */}
-          <img
-            src={`${PUBLIC_PROFILE_DATA.avatar}?width=94`}
-            alt="Profile"
-            className="w-[47px] h-[44px] rounded-[10px] object-cover"
-          />
+          <button
+            onClick={() => navigate("/profile")}
+          >
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/57b1825b265d4113d32bb4e7a341952f19bb981b?width=94"
+              alt="Profile"
+              className="w-[47px] h-[44px] rounded-[10px]"
+            />
+          </button>
         </div>
       </div>
 
@@ -104,32 +108,32 @@ export default function PublicProfile() {
             <img
               src={`${PUBLIC_PROFILE_DATA.avatar}?width=330`}
               alt="Profile Avatar"
-              className="w-[165px] h-[165px] rounded-full object-cover mt-20 flex-shrink-0"
+              className="w-[140px] h-[140px] rounded-full object-cover mt-20 flex-shrink-0"
             />
 
             {/* Info */}
-            <div className="flex-1 mt-12">
-              <h1 className="text-white text-[40px] font-light mb-6">
+            <div className="flex-1 mt-16">
+              <h1 className="text-white text-[36px] font-light mb-6">
                 {PUBLIC_PROFILE_DATA.playerName}
               </h1>
 
-              <p className="text-white text-[22px] font-medium mb-6">
+              <p className="text-white text-[18px] font-medium mb-6">
                 Зарегистрировался в AthleteLink:{" "}
                 {PUBLIC_PROFILE_DATA.registrationDate}
               </p>
 
               <div className="flex gap-4 flex-wrap">
-                <div className="border border-white rounded-[50px] px-6 py-3">
+                <div className="border border-white rounded-[20px] px-6 py-3">
                   <p className="text-white text-xl opacity-80">
                     Пол: {PUBLIC_PROFILE_DATA.gender}
                   </p>
                 </div>
-                <div className="border border-white rounded-[50px] px-6 py-3">
+                <div className="border border-white rounded-[20px] px-6 py-3">
                   <p className="text-white text-xl opacity-80">
                     Возраст: {PUBLIC_PROFILE_DATA.age}
                   </p>
                 </div>
-                <div className="border border-white rounded-[50px] px-6 py-3">
+                <div className="border border-white rounded-[20px] px-6 py-3">
                   <p className="text-white text-xl opacity-80">
                     Местоположение: {PUBLIC_PROFILE_DATA.location}
                   </p>
@@ -138,8 +142,8 @@ export default function PublicProfile() {
             </div>
 
             {/* Cat Video */}
-            <div className="flex flex-col items-center mt-6">
-              <div className="w-[150px] h-[150px] rounded-lg border-2 border-white overflow-hidden bg-gray-800">
+            <div className="flex flex-col items-center mt-16">
+              <div className="w-[260px] h-[260px] rounded-lg overflow-hidden bg-gray-800">
                 <video
                   src="/cat_stick.webm"
                   autoPlay
@@ -157,13 +161,13 @@ export default function PublicProfile() {
             {/* Left Column - Best Sport */}
             <div className="col-span-3">
               <div
-                className="rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] p-6 flex flex-col items-center relative overflow-visible min-h-[445px]"
+                className="rounded-[55px] border-[1.5px] border-black shadow-[0_14px_4px_0_rgba(0,0,0,0.50)] p-6 flex flex-col items-center relative overflow-visible min-h-[445px] mt-10"
                 style={{
                   background: `linear-gradient(90deg, ${PUBLIC_PROFILE_DATA.bestSport.gradientFrom} 0%, ${PUBLIC_PROFILE_DATA.bestSport.gradientTo} 100%)`,
                 }}
               >
                 {/* Badge Image positioned above */}
-                <div className="absolute -top-32 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 scale-[1.8]">
                   <img
                     src={`${PUBLIC_PROFILE_DATA.bestSport.badgeImage}?width=546`}
                     alt="Badge"
@@ -173,7 +177,7 @@ export default function PublicProfile() {
 
                 {/* Roman Numeral */}
                 <div
-                  className="text-[100px] font-bold text-center mt-32"
+                  className="text-[100px] font-bold text-center mt-24"
                   style={{
                     color: PUBLIC_PROFILE_DATA.bestSport.badgeColor,
                     WebkitTextStroke: "3px black",
@@ -218,13 +222,13 @@ export default function PublicProfile() {
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[0].badgeImage}?width=2304`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[0].name}
-                    className="w-[117px] h-[116px] object-contain -rotate-[15deg]"
+                    className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[44px] font-bold -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[25deg] text-center mt-7 ml-4"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[0].badgeColor,
-                      WebkitTextStroke: "3px black",
+                      WebkitTextStroke: "1px black",
                       textShadow: "0 10px 4px rgba(0, 0, 0, 0.50)",
                       fontFamily: "Piazzolla, serif",
                     }}
@@ -251,13 +255,13 @@ export default function PublicProfile() {
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[1].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[1].name}
-                    className="w-[117px] h-[116px] object-contain -rotate-[15deg]"
+                    className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[44px] font-bold -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-bold -rotate-[25deg] text-center mt-7 ml-4"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[1].badgeColor,
-                      WebkitTextStroke: "3px black",
+                      WebkitTextStroke: "1px black",
                       textShadow: "0 10px 4px rgba(0, 0, 0, 0.50)",
                       fontFamily: "Piazzolla, serif",
                     }}
@@ -284,13 +288,13 @@ export default function PublicProfile() {
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[2].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[2].name}
-                    className="w-[117px] h-[116px] object-contain -rotate-[15deg]"
+                    className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[44px] font-bold -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[25deg] text-center mt-7 ml-4"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[2].badgeColor,
-                      WebkitTextStroke: "3px black",
+                      WebkitTextStroke: "1px black",
                       textShadow: "0 10px 4px rgba(0, 0, 0, 0.50)",
                       fontFamily: "Piazzolla, serif",
                     }}
@@ -317,13 +321,13 @@ export default function PublicProfile() {
                   <img
                     src={`${PUBLIC_PROFILE_DATA.otherSports[3].badgeImage}?width=234`}
                     alt={PUBLIC_PROFILE_DATA.otherSports[3].name}
-                    className="w-[117px] h-[116px] object-contain -rotate-[15deg]"
+                    className="w-[117px] h-[116px] object-contain -rotate-[15deg] scale-125"
                   />
                   <div
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[44px] font-bold -rotate-[15deg] text-center"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[48px] font-medium -rotate-[25deg] text-center mt-7 ml-4"
                     style={{
                       color: PUBLIC_PROFILE_DATA.otherSports[3].badgeColor,
-                      WebkitTextStroke: "3px black",
+                      WebkitTextStroke: "1px black",
                       textShadow: "0 10px 4px rgba(0, 0, 0, 0.50)",
                       fontFamily: "Piazzolla, serif",
                     }}

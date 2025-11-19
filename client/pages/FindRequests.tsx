@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { SPORTS, DATE_FILTERS } from "@/constants/filterConstants";
 
 interface RequestItem {
   id: number;
@@ -19,12 +20,29 @@ export default function FindRequests() {
   const [showSportDropdown, setShowSportDropdown] = useState(false);
   const [showDateDropdown, setShowDateDropdown] = useState(false);
 
+  const sportDropdownRef = useRef<HTMLDivElement>(null);
+  const dateDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sportDropdownRef.current && !sportDropdownRef.current.contains(event.target as Node)) {
+        setShowSportDropdown(false);
+      }
+      if (dateDropdownRef.current && !dateDropdownRef.current.contains(event.target as Node)) {
+        setShowDateDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const requests: RequestItem[] = [
     {
       id: 1,
       title: "Бухич на заборах МАИ №1",
       description: "Вы будете играть в Литрбол!",
-      venue: "Московсикий авиационный...",
+      venue: "Московский авиационный...",
       dateTime: "18.10.2025, 23:33",
       players: "Игроков: 256/256",
       avgRating: "Ср. рейтинг: ~50000",
@@ -237,11 +255,15 @@ export default function FindRequests() {
               </div>
 
               {/* Profile Picture */}
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/57b1825b265d4113d32bb4e7a341952f19bb981b?width=94"
-                alt="Profile"
-                className="w-[47px] h-[44px] rounded-[10px]"
-              />
+              <button
+                onClick={() => navigate("/profile")}
+              >
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/57b1825b265d4113d32bb4e7a341952f19bb981b?width=94"
+                  alt="Profile"
+                  className="w-[47px] h-[44px] rounded-[10px]"
+                />
+              </button>
             </div>
           </div>
 
@@ -253,7 +275,7 @@ export default function FindRequests() {
 
               <div className="flex gap-4">
                 {/* Sport Filter */}
-                <div className="relative">
+                <div className="relative" ref={sportDropdownRef}>
                   <button
                     onClick={() => setShowSportDropdown(!showSportDropdown)}
                     className="w-[380px] h-[76px] rounded-[20px] border-[2.6px] border-black bg-[#D9D9D9]/40 flex items-center justify-center px-6 relative"
@@ -294,10 +316,28 @@ export default function FindRequests() {
                       {sportFilter}
                     </span>
                   </button>
+
+                  {/* Sport Dropdown Menu */}
+                  {showSportDropdown && (
+                    <div className="absolute top-[88px] left-0 w-[380px] bg-[#2a2a2a] border-[2.6px] border-black rounded-[20px] shadow-lg z-50">
+                      {SPORTS.map((sport) => (
+                        <button
+                          key={sport}
+                          onClick={() => {
+                            setSportFilter(sport);
+                            setShowSportDropdown(false);
+                          }}
+                          className="w-full px-6 py-4 text-left text-white text-[20px] font-light hover:bg-[#3a3a3a] transition-colors first:rounded-t-[16px] last:rounded-b-[16px] border-b border-white/20 last:border-b-0"
+                        >
+                          {sport}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Date Filter */}
-                <div className="relative">
+                <div className="relative" ref={dateDropdownRef}>
                   <button
                     onClick={() => setShowDateDropdown(!showDateDropdown)}
                     className="w-[380px] h-[76px] rounded-[20px] border-[2.6px] border-black bg-[#D9D9D9]/40 flex items-center justify-center px-6 relative"
@@ -338,6 +378,24 @@ export default function FindRequests() {
                       {dateFilter}
                     </span>
                   </button>
+
+                  {/* Date Dropdown Menu */}
+                  {showDateDropdown && (
+                    <div className="absolute top-[88px] left-0 w-[380px] bg-[#2a2a2a] border-[2.6px] border-black rounded-[20px] shadow-lg z-50">
+                      {DATE_FILTERS.map((date) => (
+                        <button
+                          key={date}
+                          onClick={() => {
+                            setDateFilter(date);
+                            setShowDateDropdown(false);
+                          }}
+                          className="w-full px-6 py-4 text-left text-white text-[20px] font-light hover:bg-[#3a3a3a] transition-colors first:rounded-t-[16px] last:rounded-b-[16px] border-b border-white/20 last:border-b-0"
+                        >
+                          {date}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

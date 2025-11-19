@@ -315,11 +315,15 @@ export default function Requests() {
               </div>
 
               {/* Profile Picture */}
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/57b1825b265d4113d32bb4e7a341952f19bb981b?width=94"
-                alt="Profile"
-                className="w-[47px] h-[44px] rounded-[10px]"
-              />
+              <button
+                onClick={() => navigate("/profile")}
+              >
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/57b1825b265d4113d32bb4e7a341952f19bb981b?width=94"
+                  alt="Profile"
+                  className="w-[47px] h-[44px] rounded-[10px]"
+                />
+              </button>
             </div>
           </div>
 

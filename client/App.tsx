@@ -15,6 +15,7 @@ import Requests from "./pages/Requests";
 import Settings from "./pages/Settings";
 import FindRequests from "./pages/FindRequests";
 import RequestData from "./pages/RequestData";
+import CreateRequest from "./pages/CreateRequest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ export const App = () => (
           <Route path="/settings" element={<Settings />} />
           <Route path="/find-requests" element={<FindRequests />} />
           <Route path="/request-data" element={<RequestData />} />
+          <Route path="/create-request" element={<CreateRequest />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
