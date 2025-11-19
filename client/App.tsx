@@ -15,6 +15,7 @@ import Requests from "./pages/Requests";
 import Settings from "./pages/Settings";
 import FindRequests from "./pages/FindRequests";
 import RequestData from "./pages/RequestData";
+import CreateRequest from "./pages/CreateRequest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
