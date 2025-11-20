@@ -277,7 +277,7 @@ export default function Profile() {
           {/* Profile Card */}
           <div className="rounded-[10px] overflow-hidden ">
             {/* Header Section */}
-            <div className="h-[88px] bg-gradient-to-r from-[#878DB3] to-[#001AFF]/30 opacity-50 relative ">
+            <div className="h-[88px] bg-gradient-to-r from-[#878DB3] to-[#001AFF]/30 relative ">
               <div className="flex items-center px-7 py-8 gap-6">
                 <img
                   src="/placeholder_avatar.jpg"
