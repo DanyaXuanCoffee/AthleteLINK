@@ -2,7 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SPORTS } from "@/constants/filterConstants";
 import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
 
 export default function CreateRequest() {
   const navigate = useNavigate();
@@ -294,7 +298,10 @@ export default function CreateRequest() {
                   <label className="block text-white text-[32px] font-normal mb-4 opacity-80">
                     Выберите дату проведения
                   </label>
-                  <Popover open={showDatePopover} onOpenChange={setShowDatePopover}>
+                  <Popover
+                    open={showDatePopover}
+                    onOpenChange={setShowDatePopover}
+                  >
                     <PopoverTrigger asChild>
                       <button
                         type="button"
@@ -328,7 +335,9 @@ export default function CreateRequest() {
                         <input
                           type="text"
                           value={dateInput}
-                          onChange={(e) => handleDateInputChange(e.target.value)}
+                          onChange={(e) =>
+                            handleDateInputChange(e.target.value)
+                          }
                           placeholder="ДД.ММ.ГГГГ"
                           className="w-full h-[44px] rounded-[10px] border border-black px-3 text-[16px] text-black placeholder:text-black/40 outline-none focus:border-blue-500"
                         />
