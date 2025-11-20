@@ -292,7 +292,7 @@ export default function CreateRequest() {
                           className={`text-[24px] ${dateInput ? "text-black" : "text-black/40"}`}
                         >
                           {dateInput ||
-                            "Выберите из списка или введите в формате ДД.ММ.ГГГГ"}
+                            "Выберите из спис��а или введите в формате ДД.ММ.ГГГГ"}
                         </span>
                         <svg
                           className="w-[35px] h-[35px] opacity-50"
@@ -324,6 +324,7 @@ export default function CreateRequest() {
                           selected={date}
                           onSelect={handleCalendarSelect}
                           mode="single"
+                          defaultMonth={date}
                         />
                       </div>
                     </PopoverContent>
