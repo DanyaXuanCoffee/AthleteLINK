@@ -119,7 +119,7 @@ export default function Index() {
           </div>
           <div className="flex-1 w-full">
             <img
-              src="/prev_sport.png"
+              src="/prev_sport.jpg"
               className="w-full h-auto rounded-2xl"
             />
           </div>
